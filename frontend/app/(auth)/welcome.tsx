@@ -8,11 +8,10 @@ import Animated, { FadeInDown } from "react-native-reanimated";
 import { useRouter } from "expo-router";
 
 const Welcome = () => {
-    const welcomeImage = require("@/assets/images/welcome.png");
     const router = useRouter();
 
     return (
-        <ScreenWrapper showPattern={true}>
+        <ScreenWrapper showPattern={true} bgOpacity={0.5}>
             <View style={styles.container}>
                 <View style={styles.centerItems}>
                     <Typo
@@ -24,7 +23,7 @@ const Welcome = () => {
                 </View>
 
                 <Animated.Image
-                    source={welcomeImage}
+                    source={require("@/assets/images/welcome.png")}
                     entering={FadeInDown.duration(700).springify()}
                     resizeMode="contain"
                     style={styles.welcomeImage}

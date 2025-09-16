@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { useRouter } from "expo-router";
 
 const SplashScreen = () => {
-  const splashImage = require("@/assets/images/splashImage.png");
   const router = useRouter();
 
   useEffect(() => {
@@ -18,7 +17,7 @@ const SplashScreen = () => {
     <View style={styles.container}>
       <StatusBar barStyle={"light-content"} backgroundColor={colors.neutral900} />
       <Animated.Image
-        source={splashImage}
+        source={require("@/assets/images/splashImage.png")}
         entering={FadeInDown.duration(700).springify()}
         style={styles.logo}
         resizeMode="contain"

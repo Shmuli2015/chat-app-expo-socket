@@ -12,13 +12,12 @@ interface ScreenWrapperProps {
 const { height } = Dimensions.get("window");
 
 const ScreenWrapper = ({ children, style, showPattern = false, isModal = false, bgOpacity = 1 }: ScreenWrapperProps) => {
-    const patternImage = require("@/assets/images/bgPattern.png");
     const paddingTop = Platform.OS === "ios" ? (isModal ? height * 0.02 : height * 0.06) : (isModal ? 45 : 40);
     const paddingBottom = isModal ? height * 0.02 : 0;
 
     return (
         <ImageBackground
-            source={patternImage}
+            source={require("@/assets/images/bgPattern.png")}
             style={[styles.container, isModal && styles.modalContainer]}
             imageStyle={{ opacity: showPattern ? bgOpacity : 0 }}
         >
