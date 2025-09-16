@@ -57,12 +57,6 @@ export type ResponseProps = {
   msg?: string;
 };
 
-export type BackButtonProps = {
-  style?: ViewStyle;
-  color?: string;
-  iconSize?: number;
-};
-
 export type AvatarProps = {
   size?: number;
   uri: string | null;
